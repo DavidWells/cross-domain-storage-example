@@ -22,28 +22,49 @@ storage.onConnect().then(() => {
   console.log('err', err)
 });
 
-
-const bazStorage = createGuest('https://optimistic-cori-16008f.netlify.com');
-
-bazStorage.get('fizz', function(error, value) {
-  if (error) {
-    console.log('get error', error)
-  }
-  console.log('fizz value is', value)
-});
-
-bazStorage.set('secondlib', 'yes', function(error, data) {
-  if (error) {
-    console.log('set error', error)
-  }
-  console.log('set data', data)
-  bazStorage.get('secondlib', function(error, value) {
-    if (error) {
-      console.log('secondlib error', error)
-    }
-    console.log('secondlib value is', value)
-  });
-});
+//
+// const bazStorage = createGuest('https://optimistic-cori-16008f.netlify.com');
+//
+// bazStorage.get('fizz', function(error, value) {
+//   if (error) {
+//     console.log('get error', error)
+//   }
+//   console.log('fizz value is', value)
+// });
+//
+// bazStorage.set('secondlib', 'yes', function(error, data) {
+//   if (error) {
+//     console.log('set error', error)
+//   }
+//   console.log('set data', data)
+//   bazStorage.get('secondlib', function(error, value) {
+//     if (error) {
+//       console.log('secondlib error', error)
+//     }
+//     console.log('secondlib value is', value)
+//   });
+// });
+//
+//
+// window.onload = function() {
+// 	// Get a reference to the <div> on the page that will display the
+// 	// message text.
+// 	var messageEle = document.getElementById('message');
+//
+// 	// A function to process messages received by the window.
+// 	function receiveMessage(e) {
+// 		// Check to make sure that this message came from the correct domain.
+// 		if (e.origin !== "http://s.codepen.io")
+// 			return;
+//
+// 		// Update the div element to display the message.
+// 		messageEle.innerHTML = "Message Received: " + e.data;
+// 	}
+//
+// 	// Setup an event listener that calls receiveMessage() when the window
+// 	// receives a new MessageEvent.
+// 	window.addEventListener('message', receiveMessage);
+// }
 
 class App extends Component {
   render() {

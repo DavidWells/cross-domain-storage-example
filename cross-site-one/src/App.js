@@ -5,24 +5,24 @@ import createHost from 'cross-domain-storage/host'
 import './App.css';
 
 const settings = {
-  origin: /netlify\.com$/,
+  origin: 'https://awesome-lamport-41d333.netlify.com',
   allow: ['get', 'set', 'del', 'getKeys', 'clear']
 }
 
 CrossStorageHub.init(settings);
 
 console.log('settings', settings)
-
-var storageHost = createHost([
-  {
-    origin: 'https://awesome-lamport-41d333.netlify.com',
-    allowedMethods: ['get', 'set', 'remove']
-  },
-  {
-    origin: 'http://www.bar.com',
-    allowedMethods: ['get']
-  }
-]);
+//
+// var storageHost = createHost([
+//   {
+//     origin: 'https://awesome-lamport-41d333.netlify.com',
+//     allowedMethods: ['get', 'set', 'remove']
+//   },
+//   {
+//     origin: 'http://www.bar.com',
+//     allowedMethods: ['get']
+//   }
+// ]);
 
 class App extends Component {
   render() {
