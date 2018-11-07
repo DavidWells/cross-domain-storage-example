@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import { CrossStorageHub } from 'cross-storage'
+import createHost from 'cross-domain-storage/host'
 import './App.css';
 
 const settings = {
@@ -10,7 +11,18 @@ const settings = {
 
 CrossStorageHub.init(settings);
 
-console.log('settings')
+console.log('settings', settings)
+
+var storageHost = createHost([
+  {
+    origin: 'https://awesome-lamport-41d333.netlify.com',
+    allowedMethods: ['get', 'set', 'remove']
+  },
+  {
+    origin: 'http://www.bar.com',
+    allowedMethods: ['get']
+  }
+]);
 
 class App extends Component {
   render() {
