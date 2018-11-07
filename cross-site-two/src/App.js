@@ -32,11 +32,17 @@ bazStorage.get('fizz', function(error, value) {
   console.log('fizz value is', value)
 });
 
-bazStorage.set('secondlib', 'works', function(error, data) {
+bazStorage.set('secondlib', 'yes', function(error, data) {
   if (error) {
     console.log('set error', error)
   }
   console.log('set data', data)
+  bazStorage.get('secondlib', function(error, value) {
+    if (error) {
+      console.log('secondlib error', error)
+    }
+    console.log('secondlib value is', value)
+  });
 });
 
 class App extends Component {
@@ -46,7 +52,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Site two
+            Site two - client
           </p>
         </header>
       </div>
