@@ -11,9 +11,7 @@ const storage = new CrossStorageClient('https://optimistic-cori-16008f.netlify.c
 console.log('storage', storage)
 console.log('process.env.REACT_APP_SECRET_CODE', process.env.REACT_APP_SECRET_CODE)
 
-storage.onConnect().then(() => {
-  return storage.set('newKey', 'foobar');
-}).then(() =>  {
+storage.onConnect().then(() =>  {
   return storage.get('existingKey', 'newKey');
 }).then((res) =>  {
   console.log(res.length); // 2
