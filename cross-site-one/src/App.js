@@ -5,7 +5,7 @@ import createHost from 'cross-domain-storage/host'
 import './App.css';
 
 const settings = {
-  origin: /awesome-lamport-41d333\.netlify\.com/,
+  origin: /awesome-lamport-41d333.netlify.com/,
   allow: ['get', 'set', 'del']
 }
 
