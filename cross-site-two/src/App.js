@@ -4,7 +4,7 @@ import { CrossStorageClient } from 'cross-storage'
 import { CrossStorageHub } from 'cross-storage'
 import './App.css';
 
-const storage = new CrossStorageClient('https://store.example.com/hub.html');
+const storage = new CrossStorageClient('https://optimistic-cori-16008f.netlify.com/');
 
 console.log('storage', storage)
 console.log('process.env.REACT_APP_SECRET_CODE', process.env.REACT_APP_SECRET_CODE)

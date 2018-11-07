@@ -3,9 +3,14 @@ import logo from './logo.svg';
 import { CrossStorageHub } from 'cross-storage'
 import './App.css';
 
-CrossStorageHub.init([
-  {origin: /localhost:3000$/, allow: ['get', 'set', 'del', 'getKeys', 'clear']}
-]);
+const settings = {
+  origin: /netlify\.com$/,
+  allow: ['get', 'set', 'del', 'getKeys', 'clear']
+}
+
+CrossStorageHub.init(settings);
+
+console.log('settings')
 
 class App extends Component {
   render() {
