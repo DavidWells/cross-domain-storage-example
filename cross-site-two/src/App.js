@@ -22,6 +22,7 @@ storage.onConnect().then(() => {
   console.log('err', err)
 });
 
+window.tester = storage
 //
 // const bazStorage = createGuest('https://optimistic-cori-16008f.netlify.com');
 //
