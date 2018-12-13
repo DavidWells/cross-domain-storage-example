@@ -5,7 +5,7 @@ import { CrossStorageHub } from 'cross-storage'
 import createGuest from 'cross-domain-storage/guest'
 import './App.css';
 
-const storage = new CrossStorageClient('https://optimistic-cori-16008f.netlify.com/storage.html')
+const storage = new CrossStorageClient('https://cross-site-storage-source.netlify.com/storage.html')
 // Hosted on http://www.foo.com
 
 console.log('storage', storage)
