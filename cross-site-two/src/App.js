@@ -1,69 +1,31 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import { CrossStorageClient } from 'cross-storage'
-import { CrossStorageHub } from 'cross-storage'
 import createGuest from 'cross-domain-storage/guest'
 import './App.css';
 
-const storage = new CrossStorageClient('https://cross-site-storage-source.netlify.com/storage.html')
-// Hosted on http://www.foo.com
+const source = 'https://cross-site-storage-source.netlify.com'
+const sourceTarget = `${source}/storage-two.html`
+console.log('sourceTarget', sourceTarget)
+const storage = new CrossStorageClient(sourceTarget)
 
 console.log('storage', storage)
 storage.onConnect().then(() =>  {
   return storage.get('existingKey', 'newKey');
 }).then((res) =>  {
+  console.log('res', res)
   console.log(res.length); // 2
 }).catch((err) => {
   // Handle error
   console.log('err', err)
-});
+})
 
-window.tester = storage
-//
-// const bazStorage = createGuest('https://optimistic-cori-16008f.netlify.com');
-//
-// bazStorage.get('fizz', function(error, value) {
-//   if (error) {
-//     console.log('get error', error)
-//   }
-//   console.log('fizz value is', value)
-// });
-//
-// bazStorage.set('secondlib', 'yes', function(error, data) {
-//   if (error) {
-//     console.log('set error', error)
-//   }
-//   console.log('set data', data)
-//   bazStorage.get('secondlib', function(error, value) {
-//     if (error) {
-//       console.log('secondlib error', error)
-//     }
-//     console.log('secondlib value is', value)
-//   });
-// });
-//
-//
-// window.onload = function() {
-// 	// Get a reference to the <div> on the page that will display the
-// 	// message text.
-// 	var messageEle = document.getElementById('message');
-//
-// 	// A function to process messages received by the window.
-// 	function receiveMessage(e) {
-// 		// Check to make sure that this message came from the correct domain.
-// 		if (e.origin !== "http://s.codepen.io")
-// 			return;
-//
-// 		// Update the div element to display the message.
-// 		messageEle.innerHTML = "Message Received: " + e.data;
-// 	}
-//
-// 	// Setup an event listener that calls receiveMessage() when the window
-// 	// receives a new MessageEvent.
-// 	window.addEventListener('message', receiveMessage);
-// }
+window.storage = storage
 
 class App extends Component {
+  componentDidMount() {
+
+  }
   render() {
     return (
       <div className="App">
