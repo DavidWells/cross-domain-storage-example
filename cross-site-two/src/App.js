@@ -4,7 +4,7 @@ import { CrossStorageClient } from 'cross-storage'
 import createGuest from 'cross-domain-storage/guest'
 import './App.css';
 
-const source = 'https://cross-site-storage-source.netlify.com'
+const source = 'https://cross-site-storage-source.netlify.app'
 const sourceTarget = `${source}/`
 console.log('sourceTarget', sourceTarget)
 const storage = new CrossStorageClient(sourceTarget)
