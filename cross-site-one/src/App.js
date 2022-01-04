@@ -5,7 +5,7 @@ import createHost from 'cross-domain-storage/host'
 import './App.css';
 
 CrossStorageHub.init([
-  {origin: /cross-site-storage-remote.netlify.com/, allow: ['get', 'set']},
+  {origin: /cross-site-storage-remote.netlify.app/, allow: ['get', 'set']},
   {origin: /127.0.0.1/, allow: ['get']},
   {origin: /localhost/, allow: ['get']}
 ]);
